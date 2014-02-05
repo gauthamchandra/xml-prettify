@@ -1,0 +1,29 @@
+{
+    "name": "xmlprettify",
+    "description": "an XML Formatting Library that uses DOMParsers (and ActiveX object for IE)",
+    "version": "0.5.0",
+    "author": {
+        "name": "Gautham Chandra"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gauthamchandra/xml-prettify.git"
+    },
+    "engines": {
+        "node": ">= 0.10.0"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-jshint": "~0.7.2",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-contrib-qunit": "~0.3.0",
+        "grunt-contrib-concat": "~0.3.0",
+        "grunt-contrib-uglify": "~0.2.7"
+    }
+}

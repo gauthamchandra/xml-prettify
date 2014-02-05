@@ -1,0 +1,110 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>xmlPrettify Example</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../lib/xmlprettify.js"></script>
+</head>
+<body>
+    <script type="text/xml" id='sample-xml'>
+        <cities>
+            <calctime>3.083</calctime>
+            <count>4</count>
+            <mode>name</mode>
+            <list>
+                <item>
+                    <city id="2643743" name="London">
+                        <coord lon="-0.12574" lat="51.50853"/>
+                        <country>GB</country>
+                        <sun rise="2014-02-04T07:32:57" set="2014-02-04T16:55:56"/>
+                    </city>
+                    <temperature value="278.87" min="277.59" max="280.37" unit="kelvin"/>
+                    <humidity value="62" unit="%"/>
+                    <pressure value="995" unit="hPa"/>
+                    <wind>
+                        <speed value="2.57" name="Light breeze"/>
+                        <direction value="223" code="SW" name="Southwest"/>
+                    </wind>
+                    <clouds value="0" name="sky is clear"/>
+                    <precipitation mode="no"/>
+                    <weather number="310" value="light intensity drizzle rain" icon="09n"/>
+                    <lastupdate value="2014-02-04T04:42:18" unix="1391488938"/>
+                </item>
+                <item>
+                    <city id="6058560" name="London">
+                        <coord lon="-81.23304" lat="42.983391"/>
+                        <country>CA</country>
+                        <sun rise="2014-02-04T12:35:37" set="2014-02-04T22:42:10"/>
+                    </city>
+                    <temperature value="256.42" min="255.15" max="258.15" unit="kelvin"/>
+                    <humidity value="79" unit="%"/>
+                    <pressure value="1022" unit="hPa"/>
+                    <wind>
+                        <speed value="1.16" name="Calm"/>
+                        <direction value="259" code="W" name="West"/>
+                    </wind>
+                    <clouds value="24" name="few clouds"/>
+                    <precipitation mode="no"/>
+                    <weather number="741" value="fog" icon="50n"/>
+                    <lastupdate value="2014-02-04T04:43:10" unix="1391488990"/>
+                </item>
+                <item>
+                    <city id="4517009" name="London">
+                        <coord lon="-83.44825" lat="39.886452"/>
+                        <country>US</country>
+                        <sun rise="2014-02-04T12:38:14" set="2014-02-04T22:57:16"/>
+                    </city>
+                    <temperature value="264.25" min="261.15" max="265.93" unit="kelvin"/>
+                    <humidity value="77" unit="%"/>
+                    <pressure value="1025" unit="hPa"/>
+                    <wind>
+                        <speed value="3.56" name="Gentle Breeze"/>
+                        <direction value="43" code="NE" name="NorthEast"/>
+                    </wind>
+                    <clouds value="24" name="few clouds"/>
+                    <precipitation mode="no"/>
+                    <weather number="801" value="few clouds" icon="02n"/>
+                    <lastupdate value="2014-02-04T04:43:48" unix="1391489028"/>
+                </item>
+                <item>
+                    <city id="4298960" name="London">
+                        <coord lon="-84.08326" lat="37.128979"/>
+                        <country>US</country>
+                        <sun rise="2014-02-04T12:35:41" set="2014-02-04T23:04:54"/>
+                    </city>
+                    <temperature value="271.15" min="271.15" max="271.15" unit="kelvin"/>
+                    <humidity value="92" unit="%"/>
+                    <pressure value="1026" unit="hPa"/>
+                    <wind>
+                        <speed value="1.5" name=""/>
+                        <direction value="30" code="NNE" name="North-northeast"/>
+                    </wind>
+                    <clouds value="90" name="overcast clouds"/>
+                    <precipitation mode="no"/>
+                    <weather number="804" value="overcast clouds" icon="04n"/>
+                    <lastupdate value="2014-02-04T04:15:00" unix="1391487300"/>
+                </item>
+            </list>
+        </cities>
+    </script>
+
+    <pre id="xml-container">
+
+    </pre>
+
+
+    <script>
+        var xmlStr = document.getElementById('sample-xml').innerHTML;
+        //var xmlStr = '<book id="bk101"><author>Gambardella, Matthew</author><title>XML Developers Guide</title><genre>Computer</genre><price><minprice>44.95</minprice><maxprice>99.99</maxprice></price><publish_date>2000-10-01</publish_date><description>An in-depth look at creating applications with XML.</description></book>';
+
+        var x = document.getElementById('xml-container');
+        x.innerHTML = XmlPrettify.formatXml(xmlStr, { forDomElement: true, prettyPrint: true });
+    </script>
+</body>
+</html>
