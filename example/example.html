@@ -104,7 +104,13 @@
         //var xmlStr = '<book id="bk101"><author>Gambardella, Matthew</author><title>XML Developers Guide</title><genre>Computer</genre><price><minprice>44.95</minprice><maxprice>99.99</maxprice></price><publish_date>2000-10-01</publish_date><description>An in-depth look at creating applications with XML.</description></book>';
 
         var x = document.getElementById('xml-container');
-        x.innerHTML = XmlPrettify.formatXml(xmlStr, { forDomElement: true, prettyPrint: true });
+        x.innerHTML = XmlPrettify.formatXml(xmlStr,
+                {
+                    forDomElement: true,
+                    prettyPrint: true,
+                    useSpaces: true,
+                    indentSpaceCount: 2
+                });
     </script>
 </body>
 </html>

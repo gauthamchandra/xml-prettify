@@ -44,13 +44,17 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
-        globals: {}
+        globals: {
+            "module": false,
+            "test": false,
+            "throws": false
+        }
       },
       gruntfile: {
         src: 'Gruntfile.js'
       },
       lib_test: {
-        src: ['lib/**/*.js', 'test/**/*.js']
+        src: ['lib/**/*.js', 'test/xml-prettify-test.js']
       }
     },
     qunit: {
