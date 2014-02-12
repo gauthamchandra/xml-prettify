@@ -10,6 +10,13 @@ There is only one function:
 XmlPrettify.formatXml(...);
 ```
 
+###Compatible with:
+Every browser including all versions of IE.
+
+If there isn't true, please let me know by opening an issue.
+
+###Dependencies:
+None. No jQuery, no other library or framework. Just plain JS.
 
 ###Parameters:
 
