@@ -13,11 +13,13 @@ XmlPrettify.formatXml(...);
 Find it in the 'dist' folder of this repository
 
 
-###Compatible with:
-Every major browser including:
+###Compatibility:
+Supported Browsers:
 * Chrome
 * Firefox
 * Opera
+
+####Currently Fixing:
 * Safari
 * All versions of IE.
 
@@ -109,6 +111,6 @@ Format the XML with spaces instead of tabs and change the number of spaces used 
 ```javascript
 XmlPrettify.formatXml('<customers><customer><name>Bob</name></customer></customers>', {
     useSpaces: true,
-    indentSpaceCount: 2
+    indentSpaceCount: 5
  });
 ```
