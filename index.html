@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Xml-prettify by gauthamchandra</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Xml-prettify</h1>
+        <p class="header">An XML Formatting Library to &quot;pretty print&quot; XML</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/gauthamchandra/xml-prettify/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/gauthamchandra/xml-prettify/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/gauthamchandra/xml-prettify">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/gauthamchandra">gauthamchandra</a></p>
+
+
+      </header>
+      <section>
+        <p>Its simple. There is only one function:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">XmlPrettify</span><span class="p">.</span><span class="nx">formatXml</span><span class="p">(</span><span class="nx">xmlInputString</span><span class="p">);</span>
+</pre></div>
+
+<h3>
+<a name="download" class="anchor" href="#download"><span class="octicon octicon-link"></span></a>Download:</h3>
+
+<p>Find the JavaScript file in the 'dist' folder.</p>
+
+<h3>
+<a name="compatibility" class="anchor" href="#compatibility"><span class="octicon octicon-link"></span></a>Compatibility:</h3>
+
+<p>Supported Browsers:</p>
+
+<ul>
+<li>Chrome</li>
+<li>Firefox</li>
+<li>Opera</li>
+<li>Safari</li>
+</ul><h4>
+<a name="currently-fixing" class="anchor" href="#currently-fixing"><span class="octicon octicon-link"></span></a>Currently Fixing:</h4>
+
+<ul>
+<li>All versions of IE.</li>
+</ul><h3>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies:</h3>
+
+<p>None. Just plain JS.</p>
+
+<h3>
+<a name="parameters" class="anchor" href="#parameters"><span class="octicon octicon-link"></span></a>Parameters:</h3>
+
+<p>xml-prettify takes two parameters:</p>
+
+<ol>
+<li>A string variable containing the XML String</li>
+<li>An options object.</li>
+</ol><h5>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h5>
+
+<p>The options object can contain the following options, <em>all</em> of which are optional</p>
+
+<table>
+<thead>
+<th>Option Name</th>
+        <th>Default Value</th>
+        <th>Type</th>
+        <th>Description</th>
+    </thead>
+<tbody>
+<tr>
+<td>forDomElement</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>
+                This is a flag that specifies whether the output string will be used as innerHTML in DOM elements. If so, the formatXml will return the XML formatted string with all HTML tags escaped so that it can be directly inserted in an HTML element (e.g a pre tag).
+            </td>
+        </tr>
+<tr>
+<td>prettyPrint</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>
+                This causes the function to output as <em>syntactically highlighted HTML.</em> <strong>This requires 'forDomElement' flag to be set to true'.</strong>
+            </td>
+        </tr>
+<tr>
+<td>useSpaces</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>
+                Setting this flag to true causes the function string formatter to use the unicode space character (<strong>'\u0020'</strong> for formatting instead of the tab character <strong>'\t'</strong>)
+            </td>
+        </tr>
+<tr>
+<td>indentSpaceCount</td>
+            <td>number</td>
+            <td>3</td>
+            <td>
+                Setting this sets the number of spaces used for formatting a line of XML by the function string formatter. <strong>This only is enabled if the 'useSpaces' option is also enabled<strong>
+            </strong></strong>
+</td>
+        </tr>
+</tbody>
+</table><h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>Format <em>just</em> the XML String, no options:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">XmlPrettify</span><span class="p">.</span><span class="nx">formatXml</span><span class="p">(</span><span class="s1">'&lt;customers&gt;&lt;customer&gt;&lt;name&gt;Bob&lt;/name&gt;&lt;/customer&gt;&lt;/customers&gt;'</span><span class="p">);</span>
+</pre></div>
+
+<p>Format the XML String for DOM Elements:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">XmlPrettify</span><span class="p">.</span><span class="nx">formatXml</span><span class="p">(</span><span class="s1">'&lt;customers&gt;&lt;customer&gt;&lt;name&gt;Bob&lt;/name&gt;&lt;/customer&gt;&lt;/customers&gt;'</span><span class="p">,</span> <span class="p">{</span> 
+    <span class="nx">forDomElement</span><span class="o">:</span> <span class="kc">true</span> 
+<span class="p">});</span>
+</pre></div>
+
+<p>Format the XML for DOM Elements with Syntactic Highlighting:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">XmlPrettify</span><span class="p">.</span><span class="nx">formatXml</span><span class="p">(</span><span class="s1">'&lt;customers&gt;&lt;customer&gt;&lt;name&gt;Bob&lt;/name&gt;&lt;/customer&gt;&lt;/customers&gt;'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">forDomElement</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">prettyPrint</span><span class="o">:</span> <span class="kc">true</span>
+ <span class="p">});</span>
+</pre></div>
+
+<p>Format the XML with spaces instead of tabs and change the number of spaces used from the default (3) to 5:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">XmlPrettify</span><span class="p">.</span><span class="nx">formatXml</span><span class="p">(</span><span class="s1">'&lt;customers&gt;&lt;customer&gt;&lt;name&gt;Bob&lt;/name&gt;&lt;/customer&gt;&lt;/customers&gt;'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">useSpaces</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">indentSpaceCount</span><span class="o">:</span> <span class="mi">5</span>
+ <span class="p">});</span>
+</pre></div>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-48095317-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
